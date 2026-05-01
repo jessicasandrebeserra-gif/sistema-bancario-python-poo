@@ -90,7 +90,7 @@ class Saque(Transacao):
      def registrar(self, conta):
           if conta.sacar(self.valor):
                conta.historico.adicionar_transacao(self)
-               print(f"Saque de R${self.valor} realizado com sucesso.")
+               #print(f"Saque de R${self.valor:.2f} realizado com sucesso.")
           else:
                print("Falha ao realizar o saque.")
                
@@ -105,7 +105,7 @@ class Deposito(Transacao):
      def registrar(self, conta):
           if conta.depositar(self.valor):
                conta.historico.adicionar_transacao(self)
-               print(f"Depósito de R${self.valor} realizado com sucesso.")
+               print(f"Depósito de R${self.valor:.2f} realizado com sucesso.")
           else:
                print("Falha ao realizar o depósito.")
 
